@@ -24,7 +24,7 @@ module BRCore [system] [extern_c] {
     header "bcash/BRBCashParams.h"
     header "bcash/BRBCashAddr.h"
     header "blocknode/BRBlocknodeParams.h"
-header "blocknode/BRBlocknodeAddr.h
+header "blocknode/BRBlocknodeAddr.h"
     export *
 
     explicit module Ethereum {

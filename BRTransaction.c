@@ -467,6 +467,7 @@ BRTransaction *BRTransactionParse(const uint8_t *buf, size_t bufLen)
         off += len;
         if (off + sLen <= bufLen) BRTxOutputSetScript(output, &buf[off], sLen);
         off += sLen;
+        
     }
     
     for (i = 0, witnessOff = off; witnessFlag && off <= bufLen && i < tx->inCount; i++) {

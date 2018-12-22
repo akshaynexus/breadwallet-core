@@ -726,11 +726,11 @@ static void _peerConnected(void *info)
     if (peer->timestamp > now + 2*60*60 || peer->timestamp < now - 2*60*60) peer->timestamp = now; // sanity check
     
     // TODO: XXX does this work with 0.11 pruned nodes?
-    if ((peer->services & manager->params->services) != manager->params->services) {
-        peer_log(peer, "unsupported node type");
-        BRPeerDisconnect(peer);
-    }
-    else if ((peer->services & SERVICES_NODE_NETWORK) != SERVICES_NODE_NETWORK) {
+//    if ((peer->services & manager->params->services) != manager->params->services) {
+//        peer_log(peer, "unsupported node type");
+//        BRPeerDisconnect(peer);
+//    }
+     if ((peer->services & SERVICES_NODE_NETWORK) != SERVICES_NODE_NETWORK) {
         peer_log(peer, "node doesn't carry full blocks");
         BRPeerDisconnect(peer);
     }

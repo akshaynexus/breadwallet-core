@@ -44,7 +44,7 @@ extern "C" {
 
 #define TXIN_SEQUENCE        UINT32_MAX  // sequence number for a finalized tx input
 
-#define SATOSHIS             100000000LL
+#define SATOSHIS             1000000
 #define MAX_MONEY            (21000000LL*SATOSHIS)
 
 #define BR_RAND_MAX          ((RAND_MAX > 0x7fffffff) ? 0x7fffffff : RAND_MAX)
@@ -76,6 +76,8 @@ typedef struct {
     uint64_t amount;
     uint8_t *script;
     size_t scriptLen;
+    char *message;
+    size_t messageLen;
 } BRTxOutput;
 
 #define BR_TX_OUTPUT_NONE ((const BRTxOutput) { "", 0, NULL, 0 })

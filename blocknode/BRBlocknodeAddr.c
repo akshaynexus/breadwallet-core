@@ -22,7 +22,7 @@
  //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  //  THE SOFTWARE.
  
-  #include "BRCoinAddr.h"
+  #include "BRblocknodeAddr.h"
  #include "BRBase58.h"
  #include "BRBech32.h"
  #include "BRInt.h"
