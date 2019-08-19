@@ -24,7 +24,7 @@
 
 #include <jni.h>
 #include <BRTransaction.h>
-#include "com_breadwallet_core_BRCoreJniReference.h"
+#include "co_hodlwallet_core_BRCoreJniReference.h"
 
 /**
  *
@@ -44,8 +44,8 @@ releaseEnv ();
  */
 extern void *
 getJNIReference (
-        JNIEnv *env,
-        jobject thisObject);
+    JNIEnv *env,
+    jobject thisObject);
 
 //
 // Support

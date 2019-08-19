@@ -35,7 +35,7 @@ JNIEnv *getEnv() {
     int status = (*jvm)->GetEnv(jvm, (void **) &env, JNI_VERSION_1_6);
 
     if (status != JNI_OK)
-      status = (*jvm)->AttachCurrentThread(jvm, (JNIEnv **) &env, NULL);
+        status = (*jvm)->AttachCurrentThread(jvm, (JNIEnv **) &env, NULL);
 
     return status == JNI_OK ? env : NULL;
 }

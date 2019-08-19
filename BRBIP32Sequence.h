@@ -67,7 +67,7 @@ void BRBIP32PrivKey(BRKey *key, const void *seed, size_t seedLen, uint32_t chain
 // sets the private key for path m/0H/chain/index to each element in keys
 void BRBIP32PrivKeyList(BRKey keys[], size_t keysCount, const void *seed, size_t seedLen, uint32_t chain,
                         const uint32_t indexes[]);
-    
+
 // sets the private key for the specified path to key
 // depth is the number of arguments used to specify the path
 void BRBIP32PrivKeyPath(BRKey *key, const void *seed, size_t seedLen, int depth, ...);

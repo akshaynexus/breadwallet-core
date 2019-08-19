@@ -81,7 +81,7 @@ size_t BRScriptPushData(uint8_t *script, size_t scriptLen, const uint8_t *data, 
 
 // returns a pointer to the 20byte pubkey hash, or NULL if none
 const uint8_t *BRScriptPKH(const uint8_t *script, size_t scriptLen);
-    
+
 typedef struct {
     char s[75];
 } BRAddress;
@@ -117,14 +117,12 @@ int BRAddressHash160(void *md20, const char *addr);
 int BRAddressIsValid(const char *addr);
 
 // returns a hash value for addr suitable for use in a hashtable
-inline static size_t BRAddressHash(const void *addr)
-{
+inline static size_t BRAddressHash(const void *addr) {
     return BRMurmur3_32(addr, strlen((const char *)addr), 0);
 }
 
 // true if addr and otherAddr are equal
-inline static int BRAddressEq(const void *addr, const void *otherAddr)
-{
+inline static int BRAddressEq(const void *addr, const void *otherAddr) {
     return (addr == otherAddr || strncmp((const char *)addr, (const char *)otherAddr, sizeof(BRAddress)) == 0);
 }
 
