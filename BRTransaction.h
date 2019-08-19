@@ -34,13 +34,11 @@
 extern "C" {
 #endif
 
-#define TX_FEE_PER_KB        1000ULL     // standard tx fee per kb of tx size, rounded up to nearest kb, 1 satoshi per kb
+#define TX_FEE_PER_KB        1000ULL     // standard tx fee per kb of tx size (bitcoind 0.12 default min-relay fee-rate)
 #define TX_OUTPUT_SIZE       34          // estimated size for a typical transaction output
 #define TX_INPUT_SIZE        148         // estimated size for a typical compact pubkey transaction input
 #define TX_MIN_OUTPUT_AMOUNT (TX_FEE_PER_KB*3*(TX_OUTPUT_SIZE + TX_INPUT_SIZE)/1000) //no txout can be below this amount
 #define TX_MAX_SIZE          100000      // no tx can be larger than this size in bytes
-#define TX_FREE_MAX_SIZE     0           // tx must not be larger than this size in bytes without a fee, these are not allowed on the bitcoin network anymore.
-#define TX_FREE_MIN_PRIORITY 57600000ULL // tx must not have a priority below this value without a fee
 #define TX_UNCONFIRMED       INT32_MAX   // block height indicating transaction is unconfirmed
 #define TX_MAX_LOCK_HEIGHT   500000000   // a lockTime below this value is a block height, otherwise a timestamp
 
@@ -48,6 +46,11 @@ extern "C" {
 
 #define SATOSHIS             100000000LL
 #define MAX_MONEY            (21000000LL*SATOSHIS)
+
+#define BR_RAND_MAX          ((RAND_MAX > 0x7fffffff) ? 0x7fffffff : RAND_MAX)
+
+// returns a random number less than upperBound (for non-cryptographic use only)
+uint32_t BRRand(uint32_t upperBound);
 
 typedef struct {
     UInt256 txHash;
@@ -140,12 +143,14 @@ int BRTransactionSign(BRTransaction *tx, int forkId, BRKey keys[], size_t keysCo
 int BRTransactionIsStandard(const BRTransaction *tx);
 
 // returns a hash value for tx suitable for use in a hashtable
-inline static size_t BRTransactionHash(const void *tx) {
+inline static size_t BRTransactionHash(const void *tx)
+{
     return (size_t)((const BRTransaction *)tx)->txHash.u32[0];
 }
 
 // true if tx and otherTx have equal txHash values
-inline static int BRTransactionEq(const void *tx, const void *otherTx) {
+inline static int BRTransactionEq(const void *tx, const void *otherTx)
+{
     return (tx == otherTx || UInt256Eq(((const BRTransaction *)tx)->txHash, ((const BRTransaction *)otherTx)->txHash));
 }
 

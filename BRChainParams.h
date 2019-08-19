@@ -49,13 +49,13 @@ typedef struct {
 } BRChainParams;
 
 static const char *BRMainNetDNSSeeds[] = {
-    "dnsseed.bluematt.me.", "seed.btc.petertodd.org.", "seed.bitcoin.jonasschnelli.ch.", "seed.bitcoinstats.com.",
-    "dnsseed.bitcoin.dashjr.org.", "seed.bitcoin.sipa.be.", NULL
+    "seed.breadwallet.com.", "seed.bitcoin.sipa.be.", "dnsseed.bluematt.me.", "dnsseed.bitcoin.dashjr.org.",
+    "seed.bitcoinstats.com.", "bitseed.xf2.org.", "seed.bitcoin.jonasschnelli.ch.", NULL
 };
 
 static const char *BRTestNetDNSSeeds[] = {
-    "testnet-seed.bitcoin.jonasschnelli.ch.", "seed.testnet.bitcoin.sprovoost.nl.",
-    "testnet-seed.bluematt.me.", NULL
+    "testnet-seed.breadwallet.com.", "testnet-seed.bitcoin.petertodd.org.", "testnet-seed.bluematt.me.",
+    "testnet-seed.bitcoin.schildbach.de.", NULL
 };
 
 // blockchain checkpoints - these are also used as starting points for partial chain downloads, so they must be at
@@ -105,31 +105,33 @@ static const BRCheckPoint BRTestNetCheckpoints[] = {
     {  907200, uint256("0000000000166938e6f172a21fe69fe335e33565539e74bf74eeb00d2022c226"), 1469705562, 0x1c00ffff },
     { 1008000, uint256("000000000000390aca616746a9456a0d64c1bd73661fd60a51b5bf1c92bae5a0"), 1476926743, 0x1a52ccc0 },
     { 1108800, uint256("00000000000288d9a219419d0607fb67cc324d4b6d2945ca81eaa5e739fab81e"), 1490751239, 0x1b09ecf0 },
-    { 1209600, uint256("0000000000000026b4692a26f1651bec8e9d4905640bd8e56056c9a9c53badf8"), 1507353706, 0x1973e180 },
-    { 1310400, uint256("0000000000013b434bbe5668293c92ef26df6d6d4843228e8958f6a3d8101709"), 1527063804, 0x1b0ffff0 },
-    { 1411200, uint256("00000000000000008b3baea0c3de24b9333c169e1543874f4202397f5b8502cb"), 1535560970, 0x194ac105 }
+    { 1209600, uint256("0000000000000026b4692a26f1651bec8e9d4905640bd8e56056c9a9c53badf8"), 1507328506, 0x1973e180 },
+    { 1310400, uint256("0000000000013b434bbe5668293c92ef26df6d6d4843228e8958f6a3d8101709"), 1527038604, 0x1b0ffff0 },
+    { 1411200, uint256("00000000000000008b3baea0c3de24b9333c169e1543874f4202397f5b8502cb"), 1535535770, 0x194ac105 }
     //{ 1512000, 
 };
 
-static int BRMainNetVerifyDifficulty(const BRMerkleBlock *block, const BRSet *blockSet) {
+static int BRMainNetVerifyDifficulty(const BRMerkleBlock *block, const BRSet *blockSet)
+{
     const BRMerkleBlock *previous, *b = NULL;
     uint32_t i;
-
+    
     assert(block != NULL);
     assert(blockSet != NULL);
-
+    
     // check if we hit a difficulty transition, and find previous transition block
     if ((block->height % BLOCK_DIFFICULTY_INTERVAL) == 0) {
         for (i = 0, b = block; b && i < BLOCK_DIFFICULTY_INTERVAL; i++) {
             b = BRSetGet(blockSet, &b->prevBlock);
         }
     }
-
+    
     previous = BRSetGet(blockSet, &block->prevBlock);
     return BRMerkleBlockVerifyDifficulty(block, previous, (b) ? b->timestamp : 0);
 }
 
-static int BRTestNetVerifyDifficulty(const BRMerkleBlock *block, const BRSet *blockSet) {
+static int BRTestNetVerifyDifficulty(const BRMerkleBlock *block, const BRSet *blockSet)
+{
     return 1; // XXX skip testnet difficulty check for now
 }
 

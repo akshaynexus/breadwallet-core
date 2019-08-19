@@ -3,81 +3,82 @@
 # For Android use, update your CMakeLists.txt to have something like this:
 #
 add_library( # Sets the name of the library.
-    native-lib
+             native-lib
 
-    # Sets the library as a shared library.
-    SHARED
+             # Sets the library as a shared library.
+             SHARED
 
-    # Provides a relative path to your source file(s).
-    src/main/jni/breadwallet-core/BRAddress.c
-    src/main/jni/breadwallet-core/BRAddress.h
-    src/main/jni/breadwallet-core/BRArray.h
-    src/main/jni/breadwallet-core/BRBase58.c
-    src/main/jni/breadwallet-core/BRBase58.h
-    src/main/jni/breadwallet-core/BRBIP32Sequence.c
-    src/main/jni/breadwallet-core/BRBIP32Sequence.h
-    src/main/jni/breadwallet-core/BRBIP38Key.c
-    src/main/jni/breadwallet-core/BRBIP38Key.h
-    src/main/jni/breadwallet-core/BRBIP39Mnemonic.c
-    src/main/jni/breadwallet-core/BRBIP39Mnemonic.h
-    src/main/jni/breadwallet-core/BRBIP39WordsEn.h
-    src/main/jni/breadwallet-core/BRBloomFilter.c
-    src/main/jni/breadwallet-core/BRBloomFilter.h
-    src/main/jni/breadwallet-core/BRCrypto.c
-    src/main/jni/breadwallet-core/BRCrypto.h
-    src/main/jni/breadwallet-core/BRInt.h
-    src/main/jni/breadwallet-core/BRKey.c
-    src/main/jni/breadwallet-core/BRKey.h
-    src/main/jni/breadwallet-core/BRMerkleBlock.c
-    src/main/jni/breadwallet-core/BRMerkleBlock.h
-    src/main/jni/breadwallet-core/BRPaymentProtocol.c
-    src/main/jni/breadwallet-core/BRPaymentProtocol.h
-    src/main/jni/breadwallet-core/BRPeer.c
-    src/main/jni/breadwallet-core/BRPeer.h
-    src/main/jni/breadwallet-core/BRPeerManager.c
-    src/main/jni/breadwallet-core/BRPeerManager.h
-    src/main/jni/breadwallet-core/BRSet.c
-    src/main/jni/breadwallet-core/BRSet.h
-    src/main/jni/breadwallet-core/BRTransaction.c
-    src/main/jni/breadwallet-core/BRTransaction.h
-    src/main/jni/breadwallet-core/BRWallet.c
-    src/main/jni/breadwallet-core/BRWallet.h
+             # Provides a relative path to your source file(s).
+            src/main/cpp/breadwallet-core/BRAddress.c
+            src/main/cpp/breadwallet-core/BRAddress.h
+            src/main/cpp/breadwallet-core/BRArray.h
+            src/main/cpp/breadwallet-core/BRBase58.c
+            src/main/cpp/breadwallet-core/BRBase58.h
+            src/main/cpp/breadwallet-core/BRBIP32Sequence.c
+            src/main/cpp/breadwallet-core/BRBIP32Sequence.h
+            src/main/cpp/breadwallet-core/BRBIP38Key.c
+            src/main/cpp/breadwallet-core/BRBIP38Key.h
+            src/main/cpp/breadwallet-core/BRBIP39Mnemonic.c
+            src/main/cpp/breadwallet-core/BRBIP39Mnemonic.h
+            src/main/cpp/breadwallet-core/BRBIP39WordsEn.h
+            src/main/cpp/breadwallet-core/BRBloomFilter.c
+            src/main/cpp/breadwallet-core/BRBloomFilter.h
+            src/main/cpp/breadwallet-core/BRCrypto.c
+            src/main/cpp/breadwallet-core/BRCrypto.h
+            src/main/cpp/breadwallet-core/BRInt.h
+            src/main/cpp/breadwallet-core/BRKey.c
+            src/main/cpp/breadwallet-core/BRKey.h
+            src/main/cpp/breadwallet-core/BRMerkleBlock.c
+            src/main/cpp/breadwallet-core/BRMerkleBlock.h
+            src/main/cpp/breadwallet-core/BRPaymentProtocol.c
+            src/main/cpp/breadwallet-core/BRPaymentProtocol.h
+            src/main/cpp/breadwallet-core/BRPeer.c
+            src/main/cpp/breadwallet-core/BRPeer.h
+            src/main/cpp/breadwallet-core/BRPeerManager.c
+            src/main/cpp/breadwallet-core/BRPeerManager.h
+            src/main/cpp/breadwallet-core/BRSet.c
+            src/main/cpp/breadwallet-core/BRSet.h
+            src/main/cpp/breadwallet-core/BRTransaction.c
+            src/main/cpp/breadwallet-core/BRTransaction.h
+            src/main/cpp/breadwallet-core/BRWallet.c
+            src/main/cpp/breadwallet-core/BRWallet.h
 
-    src/main/jni/breadwallet-core/Java/BRCoreJni.h
-    src/main/jni/breadwallet-core/Java/BRCoreJni.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreJniReference.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreJniReference.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreAddress.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreAddress.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreChainParams.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreChainParams.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCorePeer.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCorePeer.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreMasterPubKey.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreMasterPubKey.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreKey.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreKey.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreMerkleBlock.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreMerkleBlock.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCorePeerManager.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCorePeerManager.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreTransaction.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreTransaction.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreTransactionInput.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreTransactionInput.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreTransactionOutput.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreTransactionOutput.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCorePaymentProtocol.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCorePaymentProtocol.h
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreWallet.c
-    src/main/jni/breadwallet-core/Java/co_hodlwallet_core_BRCoreWallet.h
-)
+                           src/main/cpp/breadwallet-core/Java/BRCoreJni.h
+                           src/main/cpp/breadwallet-core/Java/BRCoreJni.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreJniReference.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreJniReference.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreAddress.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreAddress.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreChainParams.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreChainParams.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCorePeer.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCorePeer.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreMasterPubKey.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreMasterPubKey.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreKey.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreKey.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreMerkleBlock.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreMerkleBlock.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCorePeerManager.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCorePeerManager.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreTransaction.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreTransaction.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreTransactionInput.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreTransactionInput.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreTransactionOutput.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreTransactionOutput.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCorePaymentProtocol.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCorePaymentProtocol.h
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreWallet.c
+                           src/main/cpp/breadwallet-core/Java/com_breadwallet_core_BRCoreWallet.h
+            )
 
-include_directories(src/main/jni/breadwallet-core/Java)
-include_directories(src/main/jni/breadwallet-core/)
-include_directories(src/main/jni/breadwallet-core/secp256k1/include)
-include_directories(src/main/jni/breadwallet-core/secp256k1/src)
-include_directories(src/main/jni/breadwallet-core/secp256k1)
+
+include_directories(src/main/cpp/breadwallet-core/Java)
+include_directories(src/main/cpp/breadwallet-core/)
+include_directories(src/main/cpp/breadwallet-core/secp256k1/include)
+include_directories(src/main/cpp/breadwallet-core/secp256k1/src)
+include_directories(src/main/cpp/breadwallet-core/secp256k1)
 
 # -----------
 #
@@ -85,12 +86,12 @@ include_directories(src/main/jni/breadwallet-core/secp256k1)
 #   Assume you've compiled the Java code, say as part of an Android project
 #
 PROJECT_DIR=<....>/app
-JNI_DIR=${PROJECT_DIR}/src/main/jni/breadwallet-core/Java/
+JNI_DIR=${PROJECT_DIR}/src/main/cpp/breadwallet-core/Java/
 CLASSPATH=${PROJECT_DIR}/build/intermediates/classes/debug/
 
-(cd ~/Code/hodl-wallet-android/app/build/intermediates/jniLibs/hodl/debug/co/hodlwallet/core; \
+(cd ~/Bread/CoreJNI/app/build/intermediates/classes/debug/com/breadwallet/core; \
  for class in BRCore*.class; \
-   do javah -jni -d ${JNI_DIR} -classpath ${CLASSPATH} co.hodlwallet.core.${class%%.class}; \
+   do javah -jni -d ${JNI_DIR} -classpath ${CLASSPATH} com.breadwallet.core.${class%%.class}; \
    done)
    
 # Some headers will be generated that are empty - particularly for private interfaces/class.
