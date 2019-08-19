@@ -88,8 +88,7 @@ static const BRCheckPoint BRBCashCheckpoints[] = {
     //{ 564480, 
 };
 
-static const BRMerkleBlock *_medianBlock(const BRMerkleBlock *b, const BRSet *blockSet)
-{
+static const BRMerkleBlock *_medianBlock(const BRMerkleBlock *b, const BRSet *blockSet) {
     const BRMerkleBlock *b0 = NULL, *b1 = NULL, *b2 = b;
 
     b1 = (b2) ? BRSetGet(blockSet, &b2->prevBlock) : NULL;
@@ -100,8 +99,7 @@ static const BRMerkleBlock *_medianBlock(const BRMerkleBlock *b, const BRSet *bl
     return (b0 && b1 && b2) ? b1 : NULL;
 }
 
-static int BRBCashVerifyDifficulty(const BRMerkleBlock *block, const BRSet *blockSet)
-{
+static int BRBCashVerifyDifficulty(const BRMerkleBlock *block, const BRSet *blockSet) {
     const BRMerkleBlock *b, *first, *last;
     int i, sz, size = 0x1d;
     uint64_t t, target, w, work = 0;
@@ -109,7 +107,7 @@ static int BRBCashVerifyDifficulty(const BRMerkleBlock *block, const BRSet *bloc
 
     assert(block != NULL);
     assert(blockSet != NULL);
-    
+
     if (block && block->height >= 504032) { // D601 hard fork height: https://reviews.bitcoinabc.org/D601
         last = BRSetGet(blockSet, &block->prevBlock);
         last = _medianBlock(last, blockSet);
@@ -124,19 +122,19 @@ static int BRBCashVerifyDifficulty(const BRMerkleBlock *block, const BRSet *bloc
         timespan = (int64_t)last->timestamp - first->timestamp;
         if (timespan > 288*10*60) timespan = 288*10*60;
         if (timespan < 72*10*60) timespan = 72*10*60;
-        
+
         for (b = last; b != first;) {
             // target is in "compact" format, where the most significant byte is the size of the value in bytes, next
             // bit is the sign, and the last 23 bits is the value after having been right shifted by (size - 3)*8 bits
             sz = b->target >> 24, t = b->target & 0x007fffff;
-            
+
             // work += 2^256/(target + 1)
             w = (t) ? ~0ULL/t : ~0ULL;
             while (sz < size) work >>= 8, size--;
             while (size < sz) w >>= 8, sz--;
             while (work + w < w) w >>= 8, work >>= 8, size--;
             work += w;
-            
+
             b = BRSetGet(blockSet, &b->prevBlock);
         }
 
@@ -147,19 +145,18 @@ static int BRBCashVerifyDifficulty(const BRMerkleBlock *block, const BRSet *bloc
         // target = (2^256/work) - 1
         while (work && ~0ULL/work < 0x8000) work >>= 8, size--;
         target = (work) ? ~0ULL/work : ~0ULL;
-        
+
         while (size < 1 || target > 0x007fffff) target >>= 8, size++; // normalize target for "compact" format
         target |= size << 24;
-        
+
         if (target > 0x1d00ffff) target = 0x1d00ffff; // max proof-of-work
         if (target - block->target > 1) return 0;
     }
-    
+
     return 1;
 }
 
-static int BRBCashTestNetVerifyDifficulty(const BRMerkleBlock *block, const BRSet *blockSet)
-{
+static int BRBCashTestNetVerifyDifficulty(const BRMerkleBlock *block, const BRSet *blockSet) {
     return 1; // XXX skip testnet difficulty check for now
 }
 
