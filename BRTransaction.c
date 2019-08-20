@@ -39,6 +39,7 @@
 #define SIGHASH_ANYONECANPAY 0x80 // let other people add inputs, I don't care where the rest of the bitcoins come from
 #define SIGHASH_FORKID       0x40 // use BIP143 digest method (for b-cash/b-gold signatures)
 
+
 void BRTxInputSetAddress(BRTxInput *input, const char *address) {
     assert(input != NULL);
     assert(address == NULL || BRAddressIsValid(address));
