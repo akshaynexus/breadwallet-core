@@ -54,8 +54,8 @@ static const char *BRMainNetDNSSeeds[] = {
 };
 
 static const char *BRTestNetDNSSeeds[] = {
-    "testnet-seed.bitcoin.jonasschnelli.ch.", "seed.testnet.bitcoin.sprovoost.nl.",
-    "testnet-seed.bluematt.me.", NULL
+    "167.88.117.138",NULL
+
 };
 
 // blockchain checkpoints - these are also used as starting points for partial chain downloads, so they must be at
