@@ -325,23 +325,23 @@ int BRBech32Tests() {
 
     s = "\x00\x14\x75\x1e\x76\xe8\x19\x91\x96\xd4\x54\x94\x1c\x45\xd1\xb3\xa3\x23\xf1\x43\x3b\xd6";
     l = BRBech32Decode(h, b, "BC1QW508D6QEJXTDG4Y5R3ZARVARY0C5XW7KV8F3T4");
-    if (l != 22 || strcmp(h, "bc") || memcmp(s, b, l))
+    if (l != 22 || strcmp(h, "gc") || memcmp(s, b, l))
         r = 0, fprintf(stderr, "\n***FAILED*** %s: BRBech32Decode() test 1", __func__);
 
     l = BRBech32Decode(h, b, "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4");
-    if (l != 22 || strcmp(h, "bc") || memcmp(s, b, l))
+    if (l != 22 || strcmp(h, "gc") || memcmp(s, b, l))
         r = 0, fprintf(stderr, "\n***FAILED*** %s: BRBech32Decode() test 2", __func__);
 
-    l = BRBech32Encode(addr, "bc", b);
+    l = BRBech32Encode(addr, "gc", b);
     if (l == 0 || strcmp(addr, "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4"))
         r = 0, fprintf(stderr, "\n***FAILED*** %s: BRBech32Encode() test 2", __func__);
 
     s = "\x52\x10\x75\x1e\x76\xe8\x19\x91\x96\xd4\x54\x94\x1c\x45\xd1\xb3\xa3\x23";
     l = BRBech32Decode(h, b, "bc1zw508d6qejxtdg4y5r3zarvaryvg6kdaj");
-    if (l != 18 || strcmp(h, "bc") || memcmp(s, b, l))
+    if (l != 18 || strcmp(h, "gc") || memcmp(s, b, l))
         r = 0, fprintf(stderr, "\n***FAILED*** %s: BRBech32Decode() test 3", __func__);
 
-    l = BRBech32Encode(addr, "bc", b);
+    l = BRBech32Encode(addr, "gc", b);
     if (l == 0 || strcmp(addr, "bc1zw508d6qejxtdg4y5r3zarvaryvg6kdaj"))
         r = 0, fprintf(stderr, "\n***FAILED*** %s: BRBech32Encode() test 3", __func__);
 
