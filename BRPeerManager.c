@@ -1406,7 +1406,7 @@ BRPeerManager *BRPeerManagerNew(BRWallet *wallet, uint32_t earliestKeyTime,
     assert(manager->params->standardPort != 0);
     
     manager->wallet = wallet;
-    manager->earliestKeyTime = earliestKeyTime;
+    manager->earliestKeyTime = 1566251686;
     manager->averageTxPerBlock = 1400;
     manager->maxConnectCount = PEER_MAX_CONNECTIONS;
     

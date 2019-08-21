@@ -2062,7 +2062,7 @@ int BRWalletTests() {
     BRBIP39DeriveKey(&seed, phrase, NULL);
 
     BRMasterPubKey mpk = BRBIP32MasterPubKey(&seed, sizeof(seed));
-    BRWallet *w = BRWalletNew(NULL, 0, mpk, 0);
+    BRWallet *w = BRWalletNew(NULL, 0, mpk, 0x20);
     UInt256 secret = uint256("0000000000000000000000000000000000000000000000000000000000000001"),
             inHash = uint256("0000000000000000000000000000000000000000000000000000000000000001");
     BRKey k;
