@@ -199,6 +199,19 @@
 		3CF0FC9021657D7B000DE3FE /* BREthereumData.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0FC8F21657D7A000DE3FE /* BREthereumData.c */; };
 		3CF0FC9121657D7B000DE3FE /* BREthereumData.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0FC8F21657D7A000DE3FE /* BREthereumData.c */; };
 		3CF38E4821C4421600B771E6 /* BREthereumProofOfWork.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CF38E4721C4421600B771E6 /* BREthereumProofOfWork.c */; };
+		5AFC8A112347C75700565532 /* keccak.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89F72347C75600565532 /* keccak.c */; };
+		5AFC8A122347C75700565532 /* aes_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89F92347C75600565532 /* aes_helper.c */; };
+		5AFC8A132347C75700565532 /* simd.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FC2347C75600565532 /* simd.c */; };
+		5AFC8A142347C75700565532 /* luffa.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FD2347C75600565532 /* luffa.c */; };
+		5AFC8A152347C75700565532 /* blake.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC89FE2347C75600565532 /* blake.c */; };
+		5AFC8A162347C75700565532 /* cubehash.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A042347C75600565532 /* cubehash.c */; };
+		5AFC8A172347C75700565532 /* jh.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A052347C75600565532 /* jh.c */; };
+		5AFC8A182347C75700565532 /* shavite.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A062347C75600565532 /* shavite.c */; };
+		5AFC8A192347C75700565532 /* groestl.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A072347C75600565532 /* groestl.c */; };
+		5AFC8A1A2347C75700565532 /* bmw.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A082347C75600565532 /* bmw.c */; };
+		5AFC8A1B2347C75700565532 /* skein.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A0D2347C75600565532 /* skein.c */; };
+		5AFC8A1C2347C75700565532 /* echo.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A0E2347C75600565532 /* echo.c */; };
+		5AFC8A1D2347C75700565532 /* quark.c in Sources */ = {isa = PBXBuildFile; fileRef = 5AFC8A0F2347C75600565532 /* quark.c */; };
 		CA92F7902100F9CA0015C966 /* BRKeccak.c in Sources */ = {isa = PBXBuildFile; fileRef = CA92F78F2100F9CA0015C966 /* BRKeccak.c */; };
 /* End PBXBuildFile section */
 
@@ -505,6 +518,32 @@
 		3CF0FC8E21657D7A000DE3FE /* BREthereumData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BREthereumData.h; sourceTree = "<group>"; };
 		3CF0FC8F21657D7A000DE3FE /* BREthereumData.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BREthereumData.c; sourceTree = "<group>"; };
 		3CF38E4721C4421600B771E6 /* BREthereumProofOfWork.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BREthereumProofOfWork.c; sourceTree = "<group>"; };
+		5AFC89F72347C75600565532 /* keccak.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = keccak.c; sourceTree = "<group>"; };
+		5AFC89F82347C75600565532 /* sph_bmw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_bmw.h; sourceTree = "<group>"; };
+		5AFC89F92347C75600565532 /* aes_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes_helper.c; sourceTree = "<group>"; };
+		5AFC89FA2347C75600565532 /* sph_cubehash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_cubehash.h; sourceTree = "<group>"; };
+		5AFC89FB2347C75600565532 /* sph_blake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_blake.h; sourceTree = "<group>"; };
+		5AFC89FC2347C75600565532 /* simd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = simd.c; sourceTree = "<group>"; };
+		5AFC89FD2347C75600565532 /* luffa.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = luffa.c; sourceTree = "<group>"; };
+		5AFC89FE2347C75600565532 /* blake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blake.c; sourceTree = "<group>"; };
+		5AFC89FF2347C75600565532 /* sph_groestl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_groestl.h; sourceTree = "<group>"; };
+		5AFC8A002347C75600565532 /* sph_shavite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_shavite.h; sourceTree = "<group>"; };
+		5AFC8A012347C75600565532 /* sph_keccak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_keccak.h; sourceTree = "<group>"; };
+		5AFC8A022347C75600565532 /* sph_luffa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_luffa.h; sourceTree = "<group>"; };
+		5AFC8A032347C75600565532 /* sph_echo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_echo.h; sourceTree = "<group>"; };
+		5AFC8A042347C75600565532 /* cubehash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cubehash.c; sourceTree = "<group>"; };
+		5AFC8A052347C75600565532 /* jh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jh.c; sourceTree = "<group>"; };
+		5AFC8A062347C75600565532 /* shavite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shavite.c; sourceTree = "<group>"; };
+		5AFC8A072347C75600565532 /* groestl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = groestl.c; sourceTree = "<group>"; };
+		5AFC8A082347C75600565532 /* bmw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bmw.c; sourceTree = "<group>"; };
+		5AFC8A092347C75600565532 /* sph_simd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_simd.h; sourceTree = "<group>"; };
+		5AFC8A0A2347C75600565532 /* sph_jh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_jh.h; sourceTree = "<group>"; };
+		5AFC8A0B2347C75600565532 /* sph_skein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_skein.h; sourceTree = "<group>"; };
+		5AFC8A0C2347C75600565532 /* sph_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_types.h; sourceTree = "<group>"; };
+		5AFC8A0D2347C75600565532 /* skein.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = skein.c; sourceTree = "<group>"; };
+		5AFC8A0E2347C75600565532 /* echo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = echo.c; sourceTree = "<group>"; };
+		5AFC8A0F2347C75600565532 /* quark.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = quark.c; path = ../../quark.c; sourceTree = "<group>"; };
+		5AFC8A102347C75600565532 /* quark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = quark.h; path = ../../quark.h; sourceTree = "<group>"; };
 		CA92F78E2100F9CA0015C966 /* BRKeccak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRKeccak.h; sourceTree = "<group>"; };
 		CA92F78F2100F9CA0015C966 /* BRKeccak.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = BRKeccak.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -925,6 +964,9 @@
 		3C590F3120950C470005597B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5AFC8A0F2347C75600565532 /* quark.c */,
+				5AFC8A102347C75600565532 /* quark.h */,
+				5AFC89F62347C75600565532 /* sha3 */,
 				3C42EF512095143D000E58E0 /* module.modulemap */,
 				3C2A537620AF592300C430F6 /* ethereum */,
 				3C3DC5B821DFCA39004188BD /* support */,
@@ -990,6 +1032,38 @@
 				3CEE8EEC216FAFF7008540C8 /* main.c */,
 			);
 			path = CorePerf;
+			sourceTree = "<group>";
+		};
+		5AFC89F62347C75600565532 /* sha3 */ = {
+			isa = PBXGroup;
+			children = (
+				5AFC89F72347C75600565532 /* keccak.c */,
+				5AFC89F82347C75600565532 /* sph_bmw.h */,
+				5AFC89F92347C75600565532 /* aes_helper.c */,
+				5AFC89FA2347C75600565532 /* sph_cubehash.h */,
+				5AFC89FB2347C75600565532 /* sph_blake.h */,
+				5AFC89FC2347C75600565532 /* simd.c */,
+				5AFC89FD2347C75600565532 /* luffa.c */,
+				5AFC89FE2347C75600565532 /* blake.c */,
+				5AFC89FF2347C75600565532 /* sph_groestl.h */,
+				5AFC8A002347C75600565532 /* sph_shavite.h */,
+				5AFC8A012347C75600565532 /* sph_keccak.h */,
+				5AFC8A022347C75600565532 /* sph_luffa.h */,
+				5AFC8A032347C75600565532 /* sph_echo.h */,
+				5AFC8A042347C75600565532 /* cubehash.c */,
+				5AFC8A052347C75600565532 /* jh.c */,
+				5AFC8A062347C75600565532 /* shavite.c */,
+				5AFC8A072347C75600565532 /* groestl.c */,
+				5AFC8A082347C75600565532 /* bmw.c */,
+				5AFC8A092347C75600565532 /* sph_simd.h */,
+				5AFC8A0A2347C75600565532 /* sph_jh.h */,
+				5AFC8A0B2347C75600565532 /* sph_skein.h */,
+				5AFC8A0C2347C75600565532 /* sph_types.h */,
+				5AFC8A0D2347C75600565532 /* skein.c */,
+				5AFC8A0E2347C75600565532 /* echo.c */,
+			);
+			name = sha3;
+			path = ../../sha3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1420,10 +1494,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CD30496213B226B00A0CCED /* BREthereumMessageP2P.c in Sources */,
+				5AFC8A132347C75700565532 /* simd.c in Sources */,
 				3CAB60B120AF8D1A00810CE4 /* BREthereumEther.c in Sources */,
 				3CF38E4821C4421600B771E6 /* BREthereumProofOfWork.c in Sources */,
 				3CAB60B220AF8D1A00810CE4 /* BREthereumGas.c in Sources */,
+				5AFC8A1D2347C75700565532 /* quark.c in Sources */,
 				3CAB60B320AF8D1A00810CE4 /* BREthereumHash.c in Sources */,
+				5AFC8A122347C75700565532 /* aes_helper.c in Sources */,
 				3CD30498213B228900A0CCED /* BREthereumMessageDIS.c in Sources */,
 				3CAB60B420AF8D1A00810CE4 /* BREthereumAddress.c in Sources */,
 				3CAB60B520AF8D1A00810CE4 /* BREthereumSignature.c in Sources */,
@@ -1434,6 +1511,7 @@
 				3CAB60B920AF8D1A00810CE4 /* BREthereumTransactionReceipt.c in Sources */,
 				3CAB60BA20AF8D1A00810CE4 /* BREthereumAccountState.c in Sources */,
 				3CD30494213B222A00A0CCED /* BREthereumMessagePIP.c in Sources */,
+				5AFC8A192347C75700565532 /* groestl.c in Sources */,
 				3CAB60BB20AF8D1A00810CE4 /* BREthereumLog.c in Sources */,
 				3CAB60BC20AF8D1A00810CE4 /* BREthereumTransactionStatus.c in Sources */,
 				3CAB60BD20AF8D1A00810CE4 /* BREthereumBlock.c in Sources */,
@@ -1441,12 +1519,15 @@
 				3CAB60C020AF8D1A00810CE4 /* BREthereumAccount.c in Sources */,
 				3C3DC5BB21DFCA7C004188BD /* BRFileService.c in Sources */,
 				3CAB60C120AF8D1A00810CE4 /* BREthereumWallet.c in Sources */,
+				5AFC8A172347C75700565532 /* jh.c in Sources */,
+				5AFC8A152347C75700565532 /* blake.c in Sources */,
 				3C386DCF20C6F5E40065E355 /* BREthereumBCS.c in Sources */,
 				3CAB60C220AF8D1A00810CE4 /* BREthereumToken.c in Sources */,
 				3CAB60C320AF8D1A00810CE4 /* BREthereumContract.c in Sources */,
 				3CAB60C420AF8D1A00810CE4 /* BREvent.c in Sources */,
 				3CAB60C520AF8D1A00810CE4 /* BREventQueue.c in Sources */,
 				3CAB60C820AF8D1A00810CE4 /* BREthereumLES.c in Sources */,
+				5AFC8A1B2347C75700565532 /* skein.c in Sources */,
 				3C386DD020C6F5E40065E355 /* BREthereumBCSEvent.c in Sources */,
 				3C3B37FD20D82335004F9928 /* BREventAlarm.c in Sources */,
 				3CAB60CA20AF8D1A00810CE4 /* BREthereumLESFrameCoder.c in Sources */,
@@ -1459,6 +1540,7 @@
 				3CF0FC9021657D7B000DE3FE /* BREthereumData.c in Sources */,
 				3CAB60D320AF8D1A00810CE4 /* BRUtilMathParse.c in Sources */,
 				3CAB60D420AF8D1A00810CE4 /* BRUtilHex.c in Sources */,
+				5AFC8A142347C75700565532 /* luffa.c in Sources */,
 				3CAB60D520AF8D1A00810CE4 /* BRBCashAddr.c in Sources */,
 				3CAB60D620AF8D1A00810CE4 /* BRAddress.c in Sources */,
 				3CEF5FD42208C6E40010A811 /* BRAssert.c in Sources */,
@@ -1469,13 +1551,16 @@
 				3C25BF4A2236EE71004B093F /* BRChainParams.c in Sources */,
 				3C54A7FF2121F1D200C57B1B /* BREthereumMessage.c in Sources */,
 				3CAB60DA20AF8D1A00810CE4 /* BRBIP38Key.c in Sources */,
+				5AFC8A112347C75700565532 /* keccak.c in Sources */,
 				3C5F5E75212C82310038B732 /* BREthereumMPT.c in Sources */,
 				3C902623210A7E9800143B69 /* BREthereumTransfer.c in Sources */,
+				5AFC8A182347C75700565532 /* shavite.c in Sources */,
 				3C54A8022122284900C57B1B /* BREthereumNode.c in Sources */,
 				3CAB60DB20AF8D1A00810CE4 /* BRBIP39Mnemonic.c in Sources */,
 				3CAB60DC20AF8D1A00810CE4 /* BRBloomFilter.c in Sources */,
 				3CAB60DD20AF8D1A00810CE4 /* BRCrypto.c in Sources */,
 				3CAB60DE20AF8D1A00810CE4 /* BRKeyECIES.c in Sources */,
+				5AFC8A162347C75700565532 /* cubehash.c in Sources */,
 				3CAB60DF20AF8D1A00810CE4 /* BRKey.c in Sources */,
 				3C54A80521234C9700C57B1B /* BREthereumNodeEndpoint.c in Sources */,
 				3CAB60E020AF8D1A00810CE4 /* BRMerkleBlock.c in Sources */,
@@ -1485,7 +1570,9 @@
 				3CAB60E420AF8D1A00810CE4 /* BRSet.c in Sources */,
 				3C386DC720C6F4AF0065E355 /* BREthereumLESRandom.c in Sources */,
 				3C386DD420C6F6070065E355 /* BREthereumEWMEvent.c in Sources */,
+				5AFC8A1C2347C75700565532 /* echo.c in Sources */,
 				3CAB60E520AF8D1A00810CE4 /* BRTransaction.c in Sources */,
+				5AFC8A1A2347C75700565532 /* bmw.c in Sources */,
 				3CD3049D213F281500A0CCED /* BREthereumProvision.c in Sources */,
 				3C386DD320C6F6070065E355 /* BREthereumEWMClient.c in Sources */,
 				3CAB60E620AF8D1A00810CE4 /* BRWallet.c in Sources */,
