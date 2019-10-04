@@ -85,14 +85,12 @@ struct BRWalletStruct {
 
 inline static void _BRWalletAddressFromHash160(BRWallet *wallet, char *addr, size_t addrLen, UInt160 h)
 {
-    if (wallet->forkId != 0) {
         const uint8_t script[] = { OP_DUP, OP_HASH160, 20, h.u8[0], h.u8[1], h.u8[2], h.u8[3], h.u8[4], h.u8[5],
                                    h.u8[6], h.u8[7], h.u8[8], h.u8[9], h.u8[10], h.u8[11], h.u8[12], h.u8[13], h.u8[14],
                                    h.u8[15], h.u8[16], h.u8[17], h.u8[18], h.u8[19], OP_EQUALVERIFY, OP_CHECKSIG };
         
         BRAddressFromScriptPubKey(addr, addrLen, script, sizeof(script));
-    }
-    else BRAddressFromHash160(addr, addrLen, &h);
+
 }
 
 inline static int _BRWalletTxIsAscending(BRWallet *wallet, const BRTransaction *tx1, const BRTransaction *tx2)
