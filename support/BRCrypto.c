@@ -26,7 +26,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-
+#incude "quark.h"
 // endian swapping
 #if __BIG_ENDIAN__ || (defined(__BYTE_ORDER__) && __BYTE_ORDER__ == __ORDER_BIG_ENDIAN__)
 #define be32(x) (x)
@@ -200,6 +200,9 @@ void BRSHA256_2(void *md32, const void *data, size_t dataLen)
     assert(data != NULL || dataLen == 0);
     BRSHA256(t, data, dataLen);
     BRSHA256(md32, t, sizeof(t));
+}
+void BRQuark(void *md32, const void *data, size_t dataLen) {
+quark_hash(md32, data);
 }
 
 // bitwise right rotation
