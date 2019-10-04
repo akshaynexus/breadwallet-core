@@ -23,10 +23,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#include "bcash/BRBCashAddr.h"
-#include "BRAddress.h"
-#include "BRBase58.h"
-#include "BRCrypto.h"
+#include "BRBCashAddr.h"
+#include "support/BRAddress.h"
+#include "support/BRBase58.h"
+#include "support/BRCrypto.h"
 #include <inttypes.h>
 #include <stdlib.h>
 #include <string.h>
@@ -79,7 +79,7 @@ static size_t _BRBCashAddrDecode(char *hrp12, uint8_t *data21, const char *addr)
         }
         
         chk = polymod(chk) ^ c;
-        if (i + 8 >= addrLen) continue;
+        if (j >= 35 || i + 8 >= addrLen) continue;
         x = (j % 8)*5 - ((j % 8)*5/8)*8;
         buf[(j/8)*5 + (j % 8)*5/8] |= (c << 3) >> x;
         if (x > 3) buf[(j/8)*5 + (j % 8)*5/8 + 1] |= c << (11 - x);
