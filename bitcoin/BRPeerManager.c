@@ -1505,8 +1505,7 @@ BRPeerManager *BRPeerManagerNew(const BRChainParams *params, BRWallet *wallet, u
         assert(blocks[i]->height != BLOCK_UNKNOWN_HEIGHT); // height must be saved/restored along with serialized block
         BRSetAdd(manager->orphans, blocks[i]);
 
-        if ((blocks[i]->height % BLOCK_DIFFICULTY_INTERVAL) == 0 &&
-            (! block || blocks[i]->height > block->height)) block = blocks[i]; // find last transition block
+
     }
     
     while (block) {
