@@ -61,11 +61,6 @@ static const char *BRTestNetDNSSeeds[] = {
 // blockchain checkpoints - these are also used as starting points for partial chain downloads, so they must be at
 // difficulty transition boundaries in order to verify the block difficulty at the immediately following transition
 static const BRCheckPoint BRMainNetCheckpoints[] = {
-    {      0, "dced3542896ed537cb06f9cb064319adb0da615f64dd8c5e5bad974398f44b24", 1368560876, 0x1e0ffff0 },
-    {  20160, "e19b119f4a633d89320d502e7c05b88d083acdff3b4bd40efcdca54b25f6cb2c", 1369548217, 0x1c22de48 },
-    { 201600, "587ebf9221782de5e5669317f863cb56391c463195dca97e19d4e8ea6c71bd19", 1410984358, 0x1c046923 },
-    { 443520, "d462b7f5888a4588d630c99a9c261e7ccc54f402b142ce1c4d51b5cb26358363", 1467199941, 0x1c1b8327 },
-    { 564000, "9d67ce445d6b513074ef061066bb331871901b953b3bdeaa4dc0a4043cf189f8", 1485839612, 0x1c0c6b9e },
     { 690000, "93c7b08b99b3838110e538766a166f27607f2d5fda7ee0c7745525db7cfcea4f", 1504615272, 0x1c021e2b }
     //{ 564480,
 };
@@ -111,7 +106,7 @@ static const BRChainParams BRMainNetParams = {
     BRMainNetDNSSeeds,
     8121,                  // standardPort
     0xddb4c2fd,            // magicNumber
-    SERVICES_NODE_WITNESS, // services
+    0, // services
     BRMainNetVerifyDifficulty,
     BRMainNetCheckpoints,
     sizeof(BRMainNetCheckpoints)/sizeof(*BRMainNetCheckpoints)
