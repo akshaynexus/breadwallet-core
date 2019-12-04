@@ -607,7 +607,7 @@ int BRTransactionSign(BRTransaction *tx, int forkId, BRKey keys[], size_t keysCo
 {
     UInt160 pkh[keysCount];
     size_t i, j;
-    forkId = 0x20;
+    forkId = 0x0;
     assert(tx != NULL);
     assert(keys != NULL || keysCount == 0);
     
